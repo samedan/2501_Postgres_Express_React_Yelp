@@ -1,3 +1,7 @@
+### SQl Commands
+
+> https://neon.tech/postgresql/postgresql-tutorial/postgresql-insert#introduction-to-postgresql-insert-statement
+
 -cmd- psql
 \? - Help
 \l - View all Databases
@@ -11,3 +15,13 @@
 -- DELETE COLUMn -> ALTER TABLE products DROP COLUMN featured;
 -- DELETE TABLE -> DROP TABLE products;
 -- DELETE DBB -> DROP DATABASE practice;
+
+### New Database
+
+> CREATE DATABASE yelp;
+
+> CREATE TABLE restaurants; -> db.sql
+
+> INSERT INTO restaurants -> db.sql
+
+> SELECT \* FRPM resturants;
