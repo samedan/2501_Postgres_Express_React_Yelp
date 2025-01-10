@@ -27,3 +27,5 @@
 > SELECT \* FROM resturants;
 
 > UPDATE restaurants SET name = 'EdItTaco', location='miami', price_range='1' WHERE id = 4 RETURNING \*;
+
+> DELETE FROM restaurants WHERE id = 3;
