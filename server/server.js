@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 const db = require("./db");
 
 const app = express();
@@ -9,7 +10,7 @@ const port = process.env.PORT || 3005;
 
 //Middleware
 app.use(morgan("tiny"));
-
+app.use(cors());
 //Middleware
 app.use(express.json());
 
