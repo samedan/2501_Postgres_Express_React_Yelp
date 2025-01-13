@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RestaurantsContext } from "./../context/RestaurantsContext";
 import RestaurantFinder from "../apis/RestaurantFinder";
@@ -8,6 +8,8 @@ import AddReview from "../components/AddReview";
 
 function RestaurantDetailPage() {
   const { id } = useParams();
+
+  const [newReview, setNewReview] = useState(false);
 
   const { selectedRestaurant, setSelectedRestaurant } =
     useContext(RestaurantsContext);
@@ -23,15 +25,18 @@ function RestaurantDetailPage() {
       }
     };
     fetchData();
-  }, []);
+  }, [newReview]);
 
   return (
     <div>
       {selectedRestaurant && (
         <>
+          <h1 className="text-center display-1">
+            {selectedRestaurant.restaurant.name}
+          </h1>
           <div className="mt-3">
             <Reviews reviews={selectedRestaurant.reviews} />
-            <AddReview />
+            <AddReview newReview={newReview} setNewReview={setNewReview} />
           </div>
         </>
       )}
