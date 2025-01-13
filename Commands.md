@@ -44,3 +44,19 @@ CREATE TABLE reviews (
 ## Insert Independant table Review
 
 > INSERT INTO reviews (name, review, rating) VALUES ('carl', 'cool restaurant', 5);
+
+### Get MIN, MAX, AVG and TRUNC
+
+> select AVG(rating) from reviews;
+
+> select MAX(rating) from reviews;
+
+# 2 decimals
+
+> select TRUNC(AVG(rating), 2) from reviews;
+
+# Named result
+
+> select TRUNC(AVG(rating), 2) AS average_review from reviews;
+
+> SELECT TRUNC(AVG(rating),2) AS avg_rating FROM reviews WHERE restaurant_id = 2;
