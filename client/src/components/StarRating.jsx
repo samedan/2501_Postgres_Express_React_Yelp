@@ -18,11 +18,7 @@ function StarRating({ rating }) {
     }
   }
 
-  return (
-    <>
-      {stars} ({rating})
-    </>
-  );
+  return <>{stars}</>;
 }
 
 export default StarRating;
